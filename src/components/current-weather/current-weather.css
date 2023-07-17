@@ -1,0 +1,73 @@
+.weather{
+    max-width: 300px;
+    max-height: 210px;
+    box-sizing: border-box;
+    border-radius: 6px;
+    box-shadow: 10px -2px 20px -2px rgb(0, 0, 0);
+    background-color: rgb(22, 22, 21);
+    margin:15px auto 15px auto;
+    overscroll-behavior-x: auto;
+    padding: 0px 10px 0px 20px;
+    
+}
+
+.top,.Bottom{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    height: fit-content;
+
+}
+
+.city{
+    font-weight: 600;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+    margin-top: 30px;
+    color:azure
+}
+
+.weather-description{
+    font-weight: 500;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    margin-left: 1px;
+    margin-top: -10px;
+    font-size: 18px;
+    color:rgba(110, 10, 241, 0.849);
+}
+
+.weather-icon{
+    width:100px;
+}
+
+.temperature{
+    font-size: 40px;
+    color: rgb(255, 255, 255);
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: 600px;
+    margin-top: 20px;
+    
+}
+.Details{
+    padding-left: 10px;
+    margin-top: -5px;
+    width:50%
+}
+.parameter-row{
+    color:whitesmoke;
+    display:flex;
+    justify-content: space-between;
+}
+
+.parameter-label{
+    font-size: 13px;
+    font-weight:600px;
+    text-align: left;
+}
+
+.parameter-value{
+    font-size: 13px;
+    font-weight:400px;
+    text-align: right;
+    padding-left: 10px;
+}

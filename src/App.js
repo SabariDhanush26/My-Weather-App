@@ -1,19 +1,51 @@
-import './App.css';
-import { Search } from './components/search/search';
-import {CurrentWeather} from './components/current-weather/current-weather';
+import "./App.css";
+import { CurrentWeather } from "./components/current-weather/current-weather";
+import { Search } from "./components/search/search";
+import { Weather_API } from "./components/search/cities";
+import { API_Key } from "./components/search/cities";
+import { useState } from "react";
+import { Forecast } from "./components/forecast/forecast";
+
 
 function App() {
-  const handleOnSearchChange = (searchData)=>{
-    console.log(searchData);
-  }
+  const [currentWeather, setCurrentWeather] = useState(null);
+  const [forecast, setForecast] = useState(null);
+  const handleOnSearchChange = (searchData) => {
+    const [lat, lon] = searchData.value.split(" ");
+    const currentWeatherFetch = fetch(
+      `${Weather_API}weather/?lat=${lat}&lon=${lon}&appid=${API_Key}`
+    );
+    const forecastFetch = fetch(
+      `${Weather_API}/forecast?lat=${lat}&lon=${lon}&appid=${API_Key}`
+    );
+    Promise.all([currentWeatherFetch, forecastFetch])
+      .then(async (response) => {
+        const currentWeatherResponse = await response[0].json();
+        const forecastResponse = await response[1].json();
+
+        setCurrentWeather({
+          city: searchData.label,
+          ...currentWeatherResponse,
+        });
+        setForecast({ city: searchData.label, ...forecastResponse });
+      })
+      .catch((err) => console.log(err));
+  };
+  console.log(currentWeather);
+  console.log(forecast);
   return (
-    <div className="container">
-      <Search onSearchChange={handleOnSearchChange}/>
-      <CurrentWeather/>
+    <div>
+      <div className="container">
+        <Search onSearchChange={handleOnSearchChange} />
+      </div>
+      <div className="weatherdata">{currentWeather && <CurrentWeather data={currentWeather} />}</div>
+      <div>
+        {forecast && <Forecast data={forecast} />}
+      </div>
     </div>
   );
-}
-export {App};
+};
+export { App };
 
 // Here pascal naming convention is used
 // function MyButton(){
@@ -28,5 +60,3 @@ export {App};
 //   </div>);
 
 // };
-
-
