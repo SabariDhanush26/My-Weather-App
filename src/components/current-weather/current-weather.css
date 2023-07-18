@@ -9,10 +9,9 @@
     margin:15px auto;
     margin-inline-start: 42%;
     margin-inline-end: 42%;
-    
     overscroll-behavior-x: auto;
     padding: 0px 10px 0px 20px;
-
+    
 }
 
 .top,.Bottom{

@@ -36,7 +36,7 @@
     border-radius: 6px;
     font-size: 10px;
     margin-right: 10px;
-   
+    margin-left: 4px;
     /* Position the tooltip text - see examples below! */
     position: relative;
     z-index: 10;
@@ -72,20 +72,20 @@
 
 .grid-details{
     display: grid;
-    grid-row: 290px 400px;
-    grid-column: 350px 400px;
-    column-gap: 290px;
+    /* grid-row: 290px 400px;
+    grid-column: 350px 400px; */
+    column-gap: 50%;
     grid-template-columns: auto auto;
-    margin-inline-start: 298px;
-    margin-inline-end: 408px;
-    max-width: 800px;
-    min-width: fit-content;
+    margin-inline-start: 35%;
+    margin-inline-end: 37%;
+    max-width: 750px;
+    min-width: max-content;
     min-height: fit-content;
     padding-left: 30px;
     border-radius: 10px;
     padding-top: 3px;
     padding-bottom: 3px;
-    padding-right:10px;
+    padding-right:5px;
     background-color: #757575;
     font-family:'Times New Roman', Times, serif;
 }
