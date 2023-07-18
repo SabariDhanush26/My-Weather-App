@@ -1,16 +1,13 @@
 .container {
   margin:20px 60px 20px 60px;
-  max-width: 1080px;
+  max-width: 1000px;
   display: flexbox;
   min-width:300px;
-  margin-inline-start: 100px;
-}
-
-.weatherdata{
-  margin-inline-end: -40px;
-  position: relative;
+  margin-inline-start: 29%;
+  margin-inline-end:29%;
 
 }
+
 
 /* .mybutton{
   background-color: black;
